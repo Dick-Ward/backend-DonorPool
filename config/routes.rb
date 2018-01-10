@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :supports
   resources :charities
-  resources :favorites
   resources :transactions
   resources :cards
   resources :addresses
