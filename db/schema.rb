@@ -47,18 +47,6 @@ ActiveRecord::Schema.define(version: 20180110020317) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "donors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "picture"
-    t.string "user_name"
-    t.string "email"
-    t.string "password_digest"
-    t.boolean "featured", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "supports", force: :cascade do |t|
     t.integer "donor_id"
     t.integer "charity_id"
@@ -71,6 +59,18 @@ ActiveRecord::Schema.define(version: 20180110020317) do
     t.integer "donor_id"
     t.integer "charity_id"
     t.boolean "payment_successful"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "picture"
+    t.string "user_name"
+    t.string "email"
+    t.string "password_digest"
+    t.boolean "featured", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

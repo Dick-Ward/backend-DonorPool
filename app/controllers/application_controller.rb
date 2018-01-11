@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    current_user ||= Donor.find_by(id: token)
+    current_user ||= User.find_by(id: token)
   end
 
   def token

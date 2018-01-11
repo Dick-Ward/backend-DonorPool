@@ -1,4 +1,4 @@
 class Support < ApplicationRecord
-  belongs_to :donor
+  belongs_to :user
   belongs_to :charity
 end
