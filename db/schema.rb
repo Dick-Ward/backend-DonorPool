@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
     t.string "category"
     t.string "cause"
     t.string "picture"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
   create_table "supports", force: :cascade do |t|
     t.integer "donor_id"
     t.integer "charity_id"
+    t.integer "donation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
