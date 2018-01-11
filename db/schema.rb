@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
-    t.string "street2"
+    t.string "street_2"
     t.string "city"
     t.string "state"
     t.string "zip"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
 
   create_table "charities", force: :cascade do |t|
     t.string "name"
-    t.string "tagLine"
+    t.string "tagline"
     t.string "URL"
     t.string "category"
     t.string "cause"
@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(version: 20180110020317) do
   end
 
   create_table "donors", force: :cascade do |t|
-    t.string "firstName"
-    t.string "lastName"
+    t.string "first_name"
+    t.string "last_name"
     t.string "picture"
-    t.string "userName"
+    t.string "user_name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.boolean "featured", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
