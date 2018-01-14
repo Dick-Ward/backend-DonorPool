@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
     t.string "state"
     t.string "zip"
     t.string "type"
-    t.integer "donor_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
   create_table "cards", force: :cascade do |t|
     t.string "type"
     t.integer "number"
-    t.integer "donor_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
   end
 
   create_table "supports", force: :cascade do |t|
-    t.integer "donor_id"
+    t.integer "user_id"
     t.integer "charity_id"
     t.integer "donation"
     t.datetime "created_at", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20180110020317) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.integer "donor_id"
+    t.integer "user_id"
     t.integer "charity_id"
     t.boolean "payment_successful"
     t.datetime "created_at", null: false
