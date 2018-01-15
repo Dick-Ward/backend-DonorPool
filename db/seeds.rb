@@ -59,3 +59,55 @@ Update.create(charity_id: 3,
    title: "The Ipsums are Officially Lorem!",
    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tortor pretium viverra suspendisse potenti nullam ac.",
    picture: "https://i.imgur.com/fQnA7uZ.jpg")
+
+User.create(first_name: "Lin-Manuel",
+   last_name: "Miranda",
+   picture: "https://i.imgur.com/AKBejBB.jpg",
+   user_name: "Lin",
+   email: "Lin@aol.com",
+   password: "123",
+   featured: true)
+
+User.create(first_name: "Barack",
+   last_name: "Obama",
+   picture: "https://i.imgur.com/T83oVFZ.jpg",
+   user_name: "B-boyObamamama",
+   email: "potus44@aol.com",
+   password: "123",
+   featured: true)
+
+User.create(first_name: "Eve",
+   last_name: "Ewing",
+   picture: "https://i.imgur.com/4PoxyxH.jpg",
+   user_name: "Wikipedia Brown",
+   email: "Heyeve@aol.com",
+   password: "123",
+   featured: true)
+
+User.create(first_name: "Shaun",
+   last_name: "King",
+   picture: "https://i.imgur.com/IivxQzU.jpg",
+   user_name: "Shauntonamo",
+   email: "Shaun@aol.com",
+   password: "123",
+   featured: false)
+
+User.create(first_name: "Dick",
+   last_name: "Ward",
+   picture: "https://i.imgur.com/HepYBDL.jpg",
+   user_name: "Gonzodamus",
+   email: "dickward@aol.com",
+   password: "123",
+   featured: false)
+
+   Support.create(user_id: 1, charity_id: 1, donation: 5)
+   Support.create(user_id: 1, charity_id: 2, donation: 2)
+   Support.create(user_id: 1, charity_id: 3, donation: 4)
+   Support.create(user_id: 2, charity_id: 1, donation: 10)
+   Support.create(user_id: 2, charity_id: 2, donation: 1)
+   Support.create(user_id: 3, charity_id: 3, donation: 1)
+   Support.create(user_id: 3, charity_id: 1, donation: 4)
+   Support.create(user_id: 4, charity_id: 2, donation: 50)
+   Support.create(user_id: 4, charity_id: 3, donation: 2)
+   Support.create(user_id: 5, charity_id: 2, donation: 1)
+   Support.create(user_id: 5, charity_id: 1, donation: 20)
