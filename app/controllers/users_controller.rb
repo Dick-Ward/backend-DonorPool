@@ -24,5 +24,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def featured
+    users = User.select{|useraccount| useraccount.featured == true}
+    if users
+      render json: users.map {|user| {first_name: user.first_name, last_name: user.last_name, picture: user.picture, id: user.id, supported_charities: user.supported_charities.map{|charity| charity.name}}}
+    end
+  end
+
+
+
 
 end
