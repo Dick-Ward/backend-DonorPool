@@ -70,7 +70,7 @@ User.create(first_name: "Lin-Manuel",
 
 User.create(first_name: "Barack",
    last_name: "Obama",
-   picture: "https://i.imgur.com/T83oVFZ.jpg",
+   picture: "https://i.imgur.com/4ZmfTGq.jpg",
    user_name: "B-boyObamamama",
    email: "potus44@aol.com",
    password: "123",
@@ -90,7 +90,7 @@ User.create(first_name: "Shaun",
    user_name: "Shauntonamo",
    email: "Shaun@aol.com",
    password: "123",
-   featured: false)
+   featured: true)
 
 User.create(first_name: "Dick",
    last_name: "Ward",
