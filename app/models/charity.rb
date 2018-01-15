@@ -4,4 +4,6 @@ class Charity < ApplicationRecord
 
   has_many :supports
   has_many :supporters, through: :supports, source: :user
+
+  has_many :updates
 end
