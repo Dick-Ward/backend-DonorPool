@@ -4,11 +4,20 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    current_user ||= User.find_by(id: decoded_token)
+    id = decoded_token
+
+    if id
+      @user ||= User.find_by(id: id)
+    end
   end
 
   def decoded_token
-    JWT.decode(token, ENV['secret'], "HS256")[0]["id"]
+    begin
+      JWT.decode(token, ENV['secret'], "HS256")[0]["id"]
+    rescue JWT::DecodeError
+      nil
+    end
+
   end
 
   def token
