@@ -1,7 +1,10 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :beef, :user_name
+  attributes :id, :user_name, :support
 
-  def beef
-    "yo i'm a beef"
-  end
+
+
+ def support
+   object.supported_charities.map{|charity| charity.name}
+
+ end
 end

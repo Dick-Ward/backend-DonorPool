@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   has_many :supports
   has_many :supported_charities, through: :supports, source: :charity
+
+
 end

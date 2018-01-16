@@ -25,9 +25,9 @@ class UsersController < ApplicationController
   end
 
   def featured
-    users = User.select{|useraccount| useraccount.featured == true}
+    users = User.select{|useraccount| (useraccount.featured == true) && (useraccount.id != current_user.id)}
     if users
-      render json: users.map {|user| {first_name: user.first_name, last_name: user.last_name, picture: user.picture, id: user.id, supported_charities: user.supported_charities.map{|charity| charity.name}}}
+      render json: users, each_serializer: FeaturedSerializer
     end
   end
 
