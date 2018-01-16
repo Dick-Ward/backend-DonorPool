@@ -3,16 +3,22 @@ class UserSerializer < ActiveModel::Serializer
 
 
 def user
-  {id: object.id, first_name: object.first_name, last_name: object.last_name, user_name: object.user_name, picture: object.picture, email: object.email}
+  {id: object.id,
+     first_name: object.first_name,
+     last_name: object.last_name,
+     user_name: object.user_name,
+     picture: object.picture,
+     email: object.email,
+     supported: object.supported_charities}
 end
 
  def featured
    users = User.select{|useraccount| (useraccount.featured == true)}
-   users.shuffle.map.first(3){|user| {id: user.id,
+   users.shuffle.map{|user| {id: user.id,
       first_name: user.first_name,
       last_name: user.last_name,
       picture: user.picture,
-      supported: user.supported_charities.map{|charity| charity.name}}}
+      supported: user.supported_charities.map{|charity| charity.name}}}.first(3)
  end
 
  def relevant_updates
