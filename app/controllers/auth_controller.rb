@@ -24,9 +24,8 @@ class AuthController < ApplicationController
     end
 
     def dummy
-      
 
-      render json:  {jwt: issue_token({id: current_user.id}), user: UserSerializer.new(current_user)}
+      render json:  {token: issue_token({id: current_user.id}), data: UserSerializer.new(current_user)}
     end
 
 end
