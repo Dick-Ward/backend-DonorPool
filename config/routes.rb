@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get '/current_user', to: 'auth#show'
   get '/featured_users', to: 'users#featured'
   get '/my_updates/:id', to: 'updates#user_relevant_updates'
+  get '/dummy', to: 'auth#dummy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

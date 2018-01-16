@@ -9,6 +9,7 @@ class AuthController < ApplicationController
       end
   end
 
+
     def show
       token = request.headers['Authorization']
       decoded_token = JWT.decode(token, ENV['secret'], true, {:algorithm => 'HS256'})
@@ -20,6 +21,10 @@ class AuthController < ApplicationController
       else
         render json: {error: "Invalid token"}, status: 401
       end
+    end
+
+    def dummy
+      render json:  {jwt: issue_token({id: current_user.id}), user: UserSerializer.new(current_user)}
     end
 
 end

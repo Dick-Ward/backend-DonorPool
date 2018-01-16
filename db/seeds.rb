@@ -36,7 +36,7 @@ Update.create(charity_id: 1,
    picture: "https://i.imgur.com/fQnA7uZ.jpg")
 
 Update.create(charity_id: 1,
-   title: "Update on the thing!",
+   title: "Some Stuff Happened!",
    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tortor pretium viverra suspendisse potenti nullam ac.",
    picture: "https://i.imgur.com/fQnA7uZ.jpg")
 

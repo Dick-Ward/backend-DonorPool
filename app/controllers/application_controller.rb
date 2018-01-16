@@ -4,7 +4,11 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    current_user ||= User.find_by(id: token)
+    current_user ||= User.find_by(id: decoded_token)
+  end
+
+  def decoded_token
+    JWT.decode(token, ENV['secret'], "HS256")[0]["id"]
   end
 
   def token
