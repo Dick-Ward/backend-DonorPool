@@ -6,10 +6,12 @@ class UpdatesController < ApplicationController
   end
 
   def user_relevant_updates
-    if current_user
-      render json: {thing: "thing"}
+    updates = Update.all
+    if params[:id] != "undefined"
+      render json: updates.select{|update| update.charity.supporters.map{|sport| sport.id}.include?(params[:id].to_i)}
+
     else
-      render json: {thing: "stuff"}
+      render json: updates
 
     end
   end
