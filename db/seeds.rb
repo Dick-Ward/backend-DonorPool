@@ -28,7 +28,7 @@ Charity.create(name:"Life After Hate",
    category: "Intergroup, Race Relations",
    cause: "	Civil Rights, Social Action, Advocacy",
     picture: "https://i.imgur.com/fQnA7uZ.jpg",
-     icon: "https://i.imgur.com/qkvkqL9.jpg")
+     icon: "https://i.imgur.com/T6N6SGz.png")
 
 Update.create(charity_id: 1,
    title: "Update on the thing!",
@@ -48,7 +48,7 @@ Update.create(charity_id: 2,
 Update.create(charity_id: 3,
    title: "Thing Update!",
    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tortor pretium viverra suspendisse potenti nullam ac.",
-   picture: "https://i.imgur.com/fQnA7uZ.jpg")
+   picture: "https://i.imgur.com/cS9PutB.png")
 
 Update.create(charity_id: 2,
    title: "Victory in Lorem Ipsum!",
@@ -58,7 +58,7 @@ Update.create(charity_id: 2,
 Update.create(charity_id: 3,
    title: "The Ipsums are Officially Lorem!",
    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut tortor pretium viverra suspendisse potenti nullam ac.",
-   picture: "https://i.imgur.com/fQnA7uZ.jpg")
+   picture: "https://i.imgur.com/cS9PutB.png")
 
 User.create(first_name: "Lin-Manuel",
    last_name: "Miranda",
