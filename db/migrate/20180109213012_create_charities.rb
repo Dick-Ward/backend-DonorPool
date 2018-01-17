@@ -8,6 +8,7 @@ class CreateCharities < ActiveRecord::Migration[5.1]
       t.string :cause
       t.string :picture
       t.string :icon
+      t.string :mission
       t.timestamps
     end
   end
