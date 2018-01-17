@@ -28,7 +28,15 @@ class UserSerializer < ActiveModel::Serializer
 
  def relevant_updates
      updates = Update.all
-     updates.select{|update| update.charity.supporters.map{|support| support.id}.include?(object.id)}
+     updateMap = updates.select{|update| update.charity.supporters.map{|support| support.id}.include?(object.id)}
+     updateMap.map{|update|
+     {content: update.content,
+             created_at: update.created_at,
+             id: update.id,
+             picture: update.picture,
+             title: update.title,
+             charity_name: update.charity.name
+             }}
  end
 
  def charities_list
