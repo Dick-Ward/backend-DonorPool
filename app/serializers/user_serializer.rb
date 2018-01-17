@@ -2,15 +2,20 @@ class UserSerializer < ActiveModel::Serializer
   attributes :user, :featured, :relevant_updates
 
 
-def user
+ def user
   {id: object.id,
      first_name: object.first_name,
      last_name: object.last_name,
      user_name: object.user_name,
      picture: object.picture,
      email: object.email,
-     supported: object.supported_charities}
-end
+     supported: supported_charities}
+ end
+
+ def supported_charities
+  object.supported_charities.map{|charity| {name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: object.supports.find_by(charity_id: charity.id).donation }}
+ end
+
 
  def featured
    users = User.select{|useraccount| (useraccount.featured == true)}
