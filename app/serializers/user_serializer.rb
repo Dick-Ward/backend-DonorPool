@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :user, :featured, :relevant_updates
+  attributes :user, :featured, :relevant_updates, :charities_list
 
 
  def user
@@ -13,7 +13,7 @@ class UserSerializer < ActiveModel::Serializer
  end
 
  def supported_charities
-  object.supported_charities.map{|charity| {name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: object.supports.find_by(charity_id: charity.id).donation }}
+  object.supported_charities.map{|charity| {id: charity.id, name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: object.supports.find_by(charity_id: charity.id).donation }}
  end
 
 
@@ -29,6 +29,10 @@ class UserSerializer < ActiveModel::Serializer
  def relevant_updates
      updates = Update.all
      updates.select{|update| update.charity.supporters.map{|support| support.id}.include?(object.id)}
+ end
+
+ def charities_list
+   Charity.all
  end
 
 end
