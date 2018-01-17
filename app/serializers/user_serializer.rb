@@ -23,7 +23,7 @@ class UserSerializer < ActiveModel::Serializer
       first_name: user.first_name,
       last_name: user.last_name,
       picture: user.picture,
-      supported: user.supported_charities.map{|charity| charity.name}}}.first(3)
+      supported: user.supported_charities.map{|charity| {name: charity.name, id: charity.id}}}}.first(3)
  end
 
  def relevant_updates
