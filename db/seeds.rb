@@ -25,7 +25,7 @@ Charity.create(name:"Doctors Without Borders, USA",
    mission: "Doctors Without Borders, USA (DWB-USA) was founded in 1990 in New York City to raise funds, create awareness, recruit field staff, and advocate with the United Nations and US government on humanitarian concerns. Doctors Without Borders/Médecins Sans Frontières (MSF) is an international medical humanitarian organization that provides aid in nearly 60 countries to people whose survival is threatened by violence, neglect, or catastrophe, primarily due to armed conflict, epidemics, malnutrition, exclusion from health care, or natural disasters.")
 
 Charity.create(name:"Life After Hate",
-   tagline: "Advocating for justice and equality",
+   tagline: "Working with individuals who wish to leave a life of hate",
    URL: "https://www.lifeafterhate.org/",
    category: "Intergroup, Race Relations",
    cause: "	Civil Rights, Social Action, Advocacy",
