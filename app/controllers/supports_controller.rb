@@ -8,4 +8,5 @@ class SupportsController < ApplicationController
       render json: {error: "Unable to complete"}, status: 400
     end
   end
+
 end

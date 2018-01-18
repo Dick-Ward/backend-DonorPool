@@ -13,7 +13,7 @@ class UserSerializer < ActiveModel::Serializer
  end
 
  def supported_charities
-  object.supported_charities.map{|charity| {id: charity.id, name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: object.supports.find_by(charity_id: charity.id).donation }}
+   object.supported_charities.map{|charity| {id: charity.id, name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: object.supports.find_by(charity_id: charity.id).donation }}
  end
 
 
@@ -23,7 +23,7 @@ class UserSerializer < ActiveModel::Serializer
       first_name: user.first_name,
       last_name: user.last_name,
       picture: user.picture,
-      supported: user.supported_charities.map{|charity| {name: charity.name, id: charity.id}}}}.first(3)
+      supported: user.supported_charities}}.first(3)
  end
 
  def relevant_updates
@@ -41,7 +41,8 @@ class UserSerializer < ActiveModel::Serializer
  end
 
  def charities_list
-   Charity.all
+   charity_list = Charity.all.sort {|a,b| a.name <=> b.name}
+   charity_list
  end
 
 end
