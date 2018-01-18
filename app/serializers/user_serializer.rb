@@ -35,7 +35,8 @@ class UserSerializer < ActiveModel::Serializer
              id: update.id,
              picture: update.picture,
              title: update.title,
-             charity_name: update.charity.name
+             charity_name: update.charity.name,
+             charity_id: update.charity_id
              }}
  end
 
