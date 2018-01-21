@@ -13,7 +13,7 @@ class UserSerializer < ActiveModel::Serializer
  end
 
  def supported_charities
-   object.supported_charities.map{|charity| {id: charity.id, name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: object.supports.find_by(charity_id: charity.id).donation }}
+   object.supported_charities.map{|charity| {id: charity.id, name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: object.supports.find_by(charity_id: charity.id).donation, support_id: object.supports.find_by(charity_id: charity.id).id  }}
  end
 
 
