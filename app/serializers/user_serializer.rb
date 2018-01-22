@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :user, :featured, :relevant_updates, :charities_list
+  attributes :user, :featured, :charity_manager, :relevant_updates, :charities_list
 
 
  def user
