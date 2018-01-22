@@ -130,8 +130,8 @@ User.create(first_name: "Dick",
    password: "123",
    featured: false)
 
-User.create(first_name: "Burt",
-   last_name: "Larr",
+User.create(first_name: "Bert",
+   last_name: "Lahr",
    picture: "https://s3.amazonaws.com/donorpool/featured_users/Bert+Lahr.jpg",
    user_name: "Lion",
    email: "cowardly@aol.com",
