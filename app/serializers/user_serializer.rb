@@ -29,7 +29,8 @@ class UserSerializer < ActiveModel::Serializer
  def relevant_updates
      updates = Update.all
      updateMap = updates.select{|update| update.charity.supporters.map{|support| support.id}.include?(object.id)}
-     updateMap.map{|update|
+     updateMapSorted = updateMap.sort{|a,b| a.created_at <=> b.created_at}
+     updateMapSorted.map{|update|
      {content: update.content,
              created_at: update.created_at,
              id: update.id,
@@ -37,11 +38,11 @@ class UserSerializer < ActiveModel::Serializer
              title: update.title,
              charity_name: update.charity.name,
              charity_id: update.charity_id
-             }}
+             }}.first(10)
  end
 
  def charities_list
-   charity_list = Charity.all.sort {|a,b| a.name <=> b.name}
+   charity_list = Charity.all.sort{|a,b| a.name <=> b.name}
    charity_list
  end
 
