@@ -20,10 +20,10 @@ class SupportsController < ApplicationController
   end
 
   def update
-    user = User.find_by(id: params[:user_id])
+
     support = Support.find_by(id: params[:id])
     support.update(donation: params[:donation])
-    render json:  user.supported_charities.map{|charity| {id: charity.id, name: charity.name, tagline: charity.tagline, URL: charity.URL, icon: charity.icon, pledge: user.supports.find_by(charity_id: charity.id).donation, support_id: user.supports.find_by(charity_id: charity.id).id  }}
+    render json: {support_donation: support.donation}
   end
 
 end
