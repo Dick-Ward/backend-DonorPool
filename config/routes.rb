@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :managements
   resources :updates
   resources :supports
   resources :charities

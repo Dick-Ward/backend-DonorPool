@@ -92,7 +92,7 @@ Update.create(charity_id: 6,
 
 User.create(first_name: "Lin-Manuel",
    last_name: "Miranda",
-   picture: "https://i.imgur.com/AKBejBB.jpg",
+   picture: "https://s3.amazonaws.com/donorpool/featured_users/Lin.jpg",
    user_name: "Lin",
    email: "Lin@aol.com",
    password: "123",
@@ -100,7 +100,7 @@ User.create(first_name: "Lin-Manuel",
 
 User.create(first_name: "Barack",
    last_name: "Obama",
-   picture: "https://i.imgur.com/4ZmfTGq.jpg",
+   picture: "https://s3.amazonaws.com/donorpool/featured_users/Barack+Obama.jpg",
    user_name: "B-boyObamamama",
    email: "potus44@aol.com",
    password: "123",
@@ -108,7 +108,7 @@ User.create(first_name: "Barack",
 
 User.create(first_name: "Eve",
    last_name: "Ewing",
-   picture: "https://i.imgur.com/4PoxyxH.jpg",
+   picture: "https://s3.amazonaws.com/donorpool/featured_users/Eve+Ewing.jpg",
    user_name: "Wikipedia Brown",
    email: "Heyeve@aol.com",
    password: "123",
@@ -116,7 +116,7 @@ User.create(first_name: "Eve",
 
 User.create(first_name: "Shaun",
    last_name: "King",
-   picture: "https://i.imgur.com/IivxQzU.jpg",
+   picture: "https://s3.amazonaws.com/donorpool/featured_users/Shaun+King.jpg",
    user_name: "Shauntonamo",
    email: "Shaun@aol.com",
    password: "123",
@@ -124,11 +124,19 @@ User.create(first_name: "Shaun",
 
 User.create(first_name: "Dick",
    last_name: "Ward",
-   picture: "https://i.imgur.com/HepYBDL.jpg",
+   picture: "https://s3.amazonaws.com/donorpool/featured_users/Dick+Ward.jpg",
    user_name: "Gonzodamus",
    email: "dickward@aol.com",
    password: "123",
    featured: false)
+
+User.create(first_name: "Burt",
+   last_name: "Larr",
+   picture: "https://s3.amazonaws.com/donorpool/featured_users/Bert+Lahr.jpg",
+   user_name: "Lion",
+   email: "cowardly@aol.com",
+   password: "123",
+   charity_manager: true)
 
    Support.create(user_id: 1, charity_id: 1, donation: 5)
    Support.create(user_id: 1, charity_id: 2, donation: 2)

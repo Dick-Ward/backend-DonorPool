@@ -9,5 +9,8 @@ class User < ApplicationRecord
   has_many :supports
   has_many :supported_charities, through: :supports, source: :charity
 
+  has_one :management
+  has_one :managed_charity, through: :management, source: :charity
+
 
 end
