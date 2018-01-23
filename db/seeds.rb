@@ -149,3 +149,5 @@ User.create(first_name: "Bert",
    Support.create(user_id: 4, charity_id: 3, donation: 2)
    Support.create(user_id: 5, charity_id: 4, donation: 1)
    Support.create(user_id: 5, charity_id: 5, donation: 20)
+
+   Management.create(user_id: 6, charity_id: 2)

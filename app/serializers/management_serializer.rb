@@ -14,7 +14,7 @@ class ManagementSerializer < ActiveModel::Serializer
   end
 
   def supporters
-    object.charity.supporters.map{|supporter| {id: supporter.id, first_name: supporter.first_name, last_name: supporter.last_name}}
+    object.charity.supporters.map{|supporter| {id: supporter.id, first_name: supporter.first_name, last_name: supporter.last_name, donation: supporter.supports.find_by(charity_id: object.charity.id).donation}}
   end
 
 
