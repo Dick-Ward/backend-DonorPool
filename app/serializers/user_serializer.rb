@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :user, :featured, :charity_manager, :relevant_updates, :charities_list
 
+ has_one :management
 
  def user
   {id: object.id,

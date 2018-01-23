@@ -1,11 +1,9 @@
 class ManagementSerializer < ActiveModel::Serializer
-  attributes :id, :user, :charity, :updates, :supporters
+  attributes :id, :charity, :updates, :supporters
 
   belongs_to :charity
+  belongs_to :user
 
-  def user
-    {id: object.user.id, user_name: object.user.user_name, charity_manager: object.user.charity_manager }
-  end
 
   def charity
     object.charity
