@@ -34,14 +34,14 @@ class UsersController < ApplicationController
   def create_charity
     user = User.new(user_name: params[:username], password: params[:password], charity_manager: true)
     if user.save
-    charity = Charity.new(name: params[:charityName], tagline: params[:tagline], URL: params[:URL], picture: "http://via.placeholder.com/700x400", icon: "http://via.placeholder.com/50x50", mission: params[:mission] )
+      charity = Charity.new(name: params[:charityName], tagline: params[:tagline], URL: params[:URL], picture: "http://via.placeholder.com/700x400", icon: "http://via.placeholder.com/50x50", mission: params[:mission] )
       if charity.save
         management = Management.create(user_id: user.id, charity_id: charity.id)
-        render json:  {token: issue_token({id: user.id}), data: management}
+        render json:  {token: issue_token({id: user.id}), data: ManagementSerializer.new(management)}
       end
-    end
     else
       render json: {error: "Invalid username or password"}, status: 401
+    end
   end
 
   # name
