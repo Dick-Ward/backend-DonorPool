@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 20180122220405) do
     t.string "name"
     t.string "tagline"
     t.string "URL"
-    t.string "category"
-    t.string "cause"
     t.string "picture"
     t.string "icon"
     t.string "mission"

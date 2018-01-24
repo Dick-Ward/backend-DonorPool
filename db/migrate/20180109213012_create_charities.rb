@@ -4,8 +4,6 @@ class CreateCharities < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :tagline
       t.string :URL
-      t.string :category
-      t.string :cause
       t.string :picture
       t.string :icon
       t.string :mission
