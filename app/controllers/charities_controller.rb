@@ -9,4 +9,14 @@ class CharitiesController < ApplicationController
     charity = Charity.find_by(id: params[:id])
     render json: charity
   end
+
+  def update
+    charity = Charity.find_by(id: params[:id])
+    if charity.update(name: params[:name], tagline: params[:tagline], URL: params[:URL], mission: params[:mission])
+      render json: charity
+    else
+      render json: {message: "error!"}
+    end
+  end
+
 end
