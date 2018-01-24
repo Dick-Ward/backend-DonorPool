@@ -32,7 +32,6 @@ class UsersController < ApplicationController
   end
 
   def create_charity
-
     user = User.new(user_name: params[:username], password: params[:password], charity_manager: true)
     if user.save
       charity = Charity.new(name: params[:charityName], tagline: params[:tagline], URL: params[:URL], mission: params[:mission],  icon: params[:icon], picture: params[:picture] )
