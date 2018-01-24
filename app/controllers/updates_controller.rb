@@ -6,7 +6,7 @@ class UpdatesController < ApplicationController
   end
 
   def create
-    update = Update.create(charity_id: params[:charityId], title: params[:title], content: params[:content], picture: "http://via.placeholder.com/700x300")
+    update = Update.create(charity_id: params[:charityId], title: params[:title], content: params[:content], picture: params[:picture])
     if update.save
       render json: {message: "success"}
     else
